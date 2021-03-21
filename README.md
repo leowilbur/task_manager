@@ -1,4 +1,8 @@
-# Task manager [![CircleCI](https://circleci.com/leowilbur/tree/master.svg?style=svg&circle-token=f4e27343641407b1f874f5ce57d7db243eac9f7e)](https://circleci.com/leowilbur/tree/master)
+# Task manager 
+
+## CI status with CircleCI
+
+[![CircleCI](https://circleci.com/gh/leowilbur/task_manager.svg?style=svg)](https://app.circleci.com/pipelines/github/leowilbur/task_manager)
 
 ## Development
 
