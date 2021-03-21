@@ -24,6 +24,8 @@ make test
 
 ## Project structure
 
+ - Project using `golang` with [`gin-gonic/gin`](https://github.com/gin-gonic/gin) for rest API,
+ - Cron jobs with `github.com/robfig/cron`,
  - `.circleci` contains files related to the CI process,
  - `docs` contains all the documentation packages used for resource embedding,
  - `migrations` contains all the SQL migrations,
@@ -33,7 +35,7 @@ make test
  - `go.mod` and `go.sum` for package dependencies manage,
  - `task_template.csv` is example `csv` template for import task
 
-### API Document
+## API Document
 
 Postman document with request and example response:
 
@@ -79,3 +81,7 @@ Export Tasks:
 ```
 curl --location --request POST 'localhost:3000/task/export'
 ```
+
+## Note
+If you have any question or issue, feel free to leave comment.
+Thank you
