@@ -1,0 +1,11 @@
+# golang output binary directory
+bin
+
+*.coverprofile
+coverage.out
+
+.swagger-codegen
+.swagger-codegen-ignore
+
+# debug
+.vscode
