@@ -60,12 +60,13 @@ func startAPIRestService() cli.ActionFunc {
 			signal.Notify(osSignal, syscall.SIGINT, syscall.SIGTERM)
 			<-osSignal
 			ctxCancel()
-			// Wait for maximum 3s
+			// Stop cron and graceful shutdown
 			go func() {
+				router.Context.Cron.Stop()
 				timer := time.NewTimer(3 * time.Second)
 				<-timer.C
 
-				log.Fatal("Force shutdown due to timeout!")
+				log.Fatal(".........Graceful Shutdown.........")
 			}()
 		}()
 
