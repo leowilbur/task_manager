@@ -3,6 +3,8 @@
 ## CI status with CircleCI
 
 [![CircleCI](https://circleci.com/gh/leowilbur/task_manager.svg?style=svg)](https://app.circleci.com/pipelines/github/leowilbur/task_manager)
+## Project set auto CD with Heroku for testing purpose, just click on icon below: 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://leowilbur-task-manager.herokuapp.com/swagger.json)
 
 ## Development
 
@@ -39,6 +41,7 @@ make test
 Postman document with request and example response:
 
 [Click ==> Postman latest API document](https://documenter.getpostman.com/view/8050990/Tz5wVu2j)
+[Click ==> Swagger document](https://leowilbur-task-manager.herokuapp.com/swagger.json)
 
 Create Task:
 ```
