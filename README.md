@@ -28,7 +28,6 @@ make test
  - Cron jobs with `github.com/robfig/cron`,
  - `.circleci` contains files related to the CI process,
  - `docs` contains all the documentation packages used for resource embedding,
- - `migrations` contains all the SQL migrations,
  - `pkg`:
    - `models` contains all the data model declarations and a basic CRUD layer,
    - `rest` contains an implementation of the REST API,

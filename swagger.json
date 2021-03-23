@@ -1,0 +1,617 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "Examination",
+    "description": "Examination",
+    "contact": {}
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/tasks": {
+      "post": {
+        "description": "",
+        "summary": "Create Task",
+        "operationId": "CreateTask",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CreateTaskRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CreateTask"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "data": {
+                  "id": 4,
+                  "name": "Run every minutes",
+                  "cron": "* * * * *"
+                },
+                "message": "success"
+              }
+            },
+            "headers": {
+              "Vary": {
+                "type": "string",
+                "default": "Origin"
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 21 Mar 2021 10:38:19 GMT"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "83"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "summary": "Delete Task",
+        "operationId": "DeleteTask",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/DeleteTaskRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/DeleteTask"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "message": "success"
+              }
+            },
+            "headers": {
+              "Vary": {
+                "type": "string",
+                "default": "Origin"
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 21 Mar 2021 11:24:21 GMT"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "21"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "description": "",
+        "summary": "Get Task List",
+        "operationId": "GetTaskList",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/GetTaskList"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "data": [
+                  {
+                    "id": 1,
+                    "name": "Task 1",
+                    "cron": "* * * * *"
+                  },
+                  {
+                    "id": 2,
+                    "name": "Task 2",
+                    "cron": "*/1 * * * *"
+                  },
+                  {
+                    "id": 3,
+                    "name": "Task 3",
+                    "cron": "*/2 * * * *"
+                  },
+                  {
+                    "id": 4,
+                    "name": "Run every minutes",
+                    "cron": "* * * * *"
+                  }
+                ],
+                "message": "success"
+              }
+            },
+            "headers": {
+              "Vary": {
+                "type": "string",
+                "default": "Origin"
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 21 Mar 2021 10:38:22 GMT"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "221"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/task/start": {
+      "post": {
+        "description": "",
+        "summary": "Start Tasks",
+        "operationId": "StartTasks",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/StartTasks"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "message": "success"
+              }
+            },
+            "headers": {
+              "Vary": {
+                "type": "string",
+                "default": "Origin"
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 21 Mar 2021 11:24:14 GMT"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "21"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/task/stop": {
+      "post": {
+        "description": "",
+        "summary": "Stop Tasks",
+        "operationId": "StopTasks",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/StopTasksRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/StopTasks"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "message": "success"
+              }
+            },
+            "headers": {
+              "Vary": {
+                "type": "string",
+                "default": "Origin"
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 21 Mar 2021 11:24:08 GMT"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "21"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/task/import": {
+      "post": {
+        "description": "",
+        "summary": "Import Task",
+        "operationId": "ImportTask",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "name": "file",
+            "in": "formData",
+            "required": true,
+            "type": "file",
+            "format": "file",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ImportTask"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "data": [
+                  {
+                    "id": 1,
+                    "name": "Task 1",
+                    "cron": "* * * * *"
+                  },
+                  {
+                    "id": 2,
+                    "name": "Task 2",
+                    "cron": "*/1 * * * *"
+                  },
+                  {
+                    "id": 3,
+                    "name": "Task 3",
+                    "cron": "*/2 * * * *"
+                  }
+                ],
+                "message": "success"
+              }
+            },
+            "headers": {
+              "Vary": {
+                "type": "string",
+                "default": "Origin"
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 21 Mar 2021 11:22:36 GMT"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "166"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/task/export": {
+      "post": {
+        "description": "",
+        "summary": "Export Task",
+        "operationId": "ExportTask",
+        "deprecated": false,
+        "produces": [
+          "text/csv"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "text/csv": "Name,Cron\nTask 1,* * * * *\nTask 2,*/1 * * * *\nTask 3,*/2 * * * *\n"
+            },
+            "headers": {
+              "Vary": {
+                "type": "string",
+                "default": "Origin"
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 21 Mar 2021 11:22:39 GMT"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "65"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "CreateTaskRequest": {
+      "title": "CreateTaskRequest",
+      "example": {
+        "name": "Run every minutes",
+        "cron": "* * * * *"
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "cron": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "cron"
+      ]
+    },
+    "CreateTask": {
+      "title": "CreateTask",
+      "example": {
+        "data": {
+          "id": 4,
+          "name": "Run every minutes",
+          "cron": "* * * * *"
+        },
+        "message": "success"
+      },
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/Data"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "data",
+        "message"
+      ]
+    },
+    "Data": {
+      "title": "Data",
+      "example": {
+        "id": 4,
+        "name": "Run every minutes",
+        "cron": "* * * * *"
+      },
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "type": "string"
+        },
+        "cron": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "cron"
+      ]
+    },
+    "DeleteTaskRequest": {
+      "title": "DeleteTaskRequest",
+      "example": {
+        "name": "Run every minutes",
+        "cron": "* * * * *"
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "cron": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "cron"
+      ]
+    },
+    "DeleteTask": {
+      "title": "DeleteTask",
+      "example": {
+        "message": "success"
+      },
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "message"
+      ]
+    },
+    "StartTasks": {
+      "title": "StartTasks",
+      "example": {
+        "message": "success"
+      },
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "message"
+      ]
+    },
+    "StopTasksRequest": {
+      "title": "StopTasksRequest",
+      "example": {
+        "name": "Run every second",
+        "cron": "* * * * *"
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "cron": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "cron"
+      ]
+    },
+    "StopTasks": {
+      "title": "StopTasks",
+      "example": {
+        "message": "success"
+      },
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "message"
+      ]
+    },
+    "GetTaskList": {
+      "title": "GetTaskList",
+      "example": {
+        "data": [
+          {
+            "id": 1,
+            "name": "Task 1",
+            "cron": "* * * * *"
+          },
+          {
+            "id": 2,
+            "name": "Task 2",
+            "cron": "*/1 * * * *"
+          },
+          {
+            "id": 3,
+            "name": "Task 3",
+            "cron": "*/2 * * * *"
+          },
+          {
+            "id": 4,
+            "name": "Run every minutes",
+            "cron": "* * * * *"
+          }
+        ],
+        "message": "success"
+      },
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Data"
+          }
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "data",
+        "message"
+      ]
+    },
+    "ImportTask": {
+      "title": "ImportTask",
+      "example": {
+        "data": [
+          {
+            "id": 1,
+            "name": "Task 1",
+            "cron": "* * * * *"
+          },
+          {
+            "id": 2,
+            "name": "Task 2",
+            "cron": "*/1 * * * *"
+          },
+          {
+            "id": 3,
+            "name": "Task 3",
+            "cron": "*/2 * * * *"
+          }
+        ],
+        "message": "success"
+      },
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Data"
+          }
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "data",
+        "message"
+      ]
+    }
+  },
+  "tags": []
+}

@@ -1,10 +1,13 @@
 package rest
 
 import (
+	"net/http"
+
 	"github.com/gin-gonic/gin"
 	"github.com/gocraft/work"
 	"github.com/rs/cors"
 
+	"github.com/leowilbur/task_manager/docs/api"
 	"github.com/leowilbur/task_manager/pkg/models"
 )
 
@@ -30,6 +33,11 @@ func New(context *models.Context) (*API, error) {
 	corsMiddleware := cors.AllowAll()
 	r.Use(func(c *gin.Context) {
 		corsMiddleware.HandlerFunc(c.Writer, c.Request)
+	})
+
+	r.GET("/swagger.json", func(r *gin.Context) {
+		r.Header("Content-Type", "application/json")
+		r.String(http.StatusOK, api.GetSwaggerJSON())
 	})
 
 	r.GET("/tasks", r.GetTaskList)
