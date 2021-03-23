@@ -41,6 +41,7 @@ make test
 Postman document with request and example response:
 
 [Click ==> Postman latest API document](https://documenter.getpostman.com/view/8050990/Tz5wVu2j)
+
 [Click ==> Swagger document](https://leowilbur-task-manager.herokuapp.com/swagger.json)
 
 Create Task:
